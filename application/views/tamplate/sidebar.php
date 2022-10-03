@@ -49,7 +49,7 @@
                         <a class="collapse-item" href="http://[::1]/ibuk-sipa/jabatan/index/">Jabatan</a>
                         <a class="collapse-item" href="http://[::1]/ibuk-sipa/kelas/index/">Kelas</a>
                         <a class="collapse-item" href="http://[::1]/ibuk-sipa/mapel/index/">Mata Pelajaran</a>
-                        <!-- <a class="collapse-item" href="http://localhost/kta-gerindra/desa/index">Desa</a> -->
+                        <a class="collapse-item" href="http://[::1]/ibuk-sipa/guru/index/">Guru</a>
                     </div>
                 </div>
             </li>
