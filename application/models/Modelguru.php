@@ -5,7 +5,9 @@ class Modelguru extends CI_Model
 {
 	public function SemuaData()
 	{
-		return $this->db->get('tbl_guru')->result_array(); //banyak data kepanggil ya select * from
+		$this->db->join('tbl_jabatan jbt' ,'jbt.kd_jabatan=gru.kd_jabatan');
+		$this->db->join('tbl_mapel mpl' ,'mpl.kd_mapel=gru.kd_mapel');
+		return $this->db->get('tbl_guru gru')->result_array(); //banyak data kepanggil ya select * from
 	}
 
 
@@ -21,15 +23,15 @@ class Modelguru extends CI_Model
 		$this->db->insert('tbl_guru', $data); // ini query masukin ke database atau query insert
 	}
 
-	public function hapus_data ($id) // buat funcion yang nanti di panggi di ctrl dan ambil id
+	public function hapus_data_guru ($id) // buat funcion yang nanti di panggi di ctrl dan ambil id
 	{
 		$this->db->where('id', $id); // cari nama id lalu lakukan ambil id 
-		$this->db->delete('tbl_mapel'); // lalu delete data id yang adan di tbl_blok
+		$this->db->delete('tbl_guru'); // lalu delete data id yang adan di tbl_blok
 	}
 
-	public function ambil_id_mapel($id) //buat funcion yang nanti di panggi di ctrl dan ambil id
+	public function ambil_id_guru($id) //buat funcion yang nanti di panggi di ctrl dan ambil id
 	{
-		return $this->db->get_where('tbl_mapel', ['id' => $id]) //pengambilan data dari database ambil ID
+		return $this->db->get_where('tbl_guru', ['id' => $id]) //pengambilan data dari database ambil ID
 		->row_array();
 	}
 

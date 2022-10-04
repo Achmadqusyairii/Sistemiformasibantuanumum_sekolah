@@ -34,11 +34,11 @@
       <td><?php echo $guru['kd_guru']; ?></td>
       <td><?php echo $guru['nip']; ?></td>
       <td><?php echo $guru['nama']; ?></td>
-      <td><?php echo $guru['kd_jabatan']; ?></td>
-      <td><?php echo $guru['kd_mapel']; ?></td>
+      <td><?php echo $guru['jabatan']; ?></td>
+      <td><?php echo $guru['nm_mapel']; ?></td>
     <td>
       <a href="<?php echo base_url() ?>guru/edit_data/<?php echo $guru['id']; ?>" class="badge badge-primary"><i class="fa-solid fa-pen"></i></a>
-      <a href="<?php echo base_url() ?>guru/hapus_data/<?php echo $guru['id']; ?>" class="badge badge-danger"><i class="fa-solid fa-trash-can"></i></a></td>
+      <a href="<?php echo base_url() ?>guru/hapus_data_guru/<?php echo $guru['id']; ?>" class="badge badge-danger"><i class="fa-solid fa-trash-can"></i></a></td>
     </tr>
     
     <?php endforeach ?>

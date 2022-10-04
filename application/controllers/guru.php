@@ -32,10 +32,10 @@ class Guru extends CI_Controller {
 		redirect('guru'); //ini kembali ke view
 	}
 
-	public function hapus_data($id) // fungsi hapus data mengambil ID 
+	public function hapus_data_guru($id) // fungsi hapus data mengambil ID 
 	{
-		$this->Modeljabatan->hapus_data ($id);// lihat di model lalu lakukan fuction hapus data
-		redirect('jabatan'); // kembali ke view
+		$this->Modelguru->hapus_data_guru ($id);// lihat di model lalu lakukan fuction hapus data
+		redirect('guru'); // kembali ke view
 	}
 	public function edit_data ($id)
 	{
