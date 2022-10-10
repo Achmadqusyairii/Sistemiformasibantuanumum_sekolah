@@ -50,6 +50,7 @@
                         <a class="collapse-item" href="http://[::1]/ibuk-sipa/kelas/index/">Kelas</a>
                         <a class="collapse-item" href="http://[::1]/ibuk-sipa/mapel/index/">Mata Pelajaran</a>
                         <a class="collapse-item" href="http://[::1]/ibuk-sipa/guru/index/">Guru</a>
+                        <a class="collapse-item" href="http://[::1]/ibuk-sipa/point/index/">Point</a>
                     </div>
                 </div>
             </li>
