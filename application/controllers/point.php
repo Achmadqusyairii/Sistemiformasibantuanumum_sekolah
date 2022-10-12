@@ -37,18 +37,18 @@ class Point extends CI_Controller {
 	}
 	public function edit_data ($id)
 	{
-		$data['tbl_jabatan']=$this->Modeljabatan->ambil_id_jabatan($id);
+		$data['tbl_point']=$this->Modelpoint->ambil_id_point($id);
 		$this->load->view('tamplate/header');
 		$this->load->view('tamplate/sidebar');
 		$this->load->view('tamplate/topbar');
-		$this->load->view('edit_data_jabatan', $data);
+		$this->load->view('edit_data_point', $data);
 		$this->load->view('tamplate/footer');
 	}
 
-	public function edit_data_jabatan ()
+	public function edit_data_point ()
 	{
-	$this -> Modeljabatan->proses_edit_jabatan();
-	redirect('jabatan');
+	$this -> Modelpoint->proses_edit_point();
+	redirect('point');
 	}
 
 	//kabupaten

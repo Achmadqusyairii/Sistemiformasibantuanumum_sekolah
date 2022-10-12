@@ -31,14 +31,15 @@ class Modelpoint extends CI_Model
 		->row_array();
 	}
 
-	public function proses_edit_mapel() // menjadi function di ctrl
+	public function proses_edit_point() // menjadi function di ctrl
 	{
 		$data =[
-			"kd_mapel"=> $this->input->post('kd'),
-			"nm_mapel"=> $this->input->post('mapel'),
+			"kd_point"=> $this->input->post('kd_point'),
+			"nm_point"=> $this->input->post('nm_point'),
+			"nilai_point"=> $this->input->post('nilai_point'),
 		];
 		$this->db->where('id', $this->input->post('id'));
-		$this->db->update('tbl_mapel', $data);
+		$this->db->update('tbl_point', $data);
 	}
 
 	//kabupaten
