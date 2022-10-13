@@ -26,8 +26,13 @@ class Jabatan extends CI_Controller {
 
 	public function tambah_data_jabatan() // ini ambil dari nama model
 	{
-		$this->Modeljabatan->tambah_data_jabatan(); // ini ambil dari fuction model
-		redirect('jabatan'); //ini kembali ke view
+		$insert = $this->Modeljabatan->tambah_data_jabatan(); // ini ambil dari fuction model
+		// redirect('jabatan'); //ini kembali ke view
+		if ($insert > 0){
+			echo json_encode(['code' => 200, 'message' => 'Data Anda Berhasil Di Simpan']);
+		}else{
+			echo json_encode(['code' => 200, 'message' => 'Data Anda Gagal Di Simpan']);
+		}
 	}
 
 	public function hapus_data($id) // fungsi hapus data mengambil ID 
@@ -48,7 +53,7 @@ class Jabatan extends CI_Controller {
 	public function edit_data_jabatan ()
 	{
 	$this -> Modeljabatan->proses_edit_jabatan();
-	redirect('jabatan');
+	//redirect('jabatan');
 	}
 
 	//kabupaten

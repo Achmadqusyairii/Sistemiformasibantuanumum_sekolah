@@ -16,6 +16,7 @@ class Modeljabatan extends CI_Model
 			"jabatan"=> $this->input->post('jabatan'), // ini ada di name inputan
 		];
 		$this->db->insert('tbl_jabatan', $data); // ini query masukin ke database atau query insert
+		return $this->db->affected_rows();
 	}
 
 	public function hapus_data ($id) // buat funcion yang nanti di panggi di ctrl dan ambil id

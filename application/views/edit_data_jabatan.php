@@ -5,7 +5,7 @@
 <h6 class="m-0 font-weight-bold text-primary">EDIT DATA JABATAN </h6>
 <br>
 
-<form method="post" action ="<?php echo base_url ('jabatan/edit_data_jabatan'); ?>">
+<form id="form-jabatan-edit" method="post" action ="<?php echo base_url ('jabatan/edit_data_jabatan'); ?>">
 <input type="hidden" name="id" value="<?php echo  $tbl_jabatan['id'];?>">
 
   <div class="from-gruop row">
@@ -33,3 +33,28 @@
 </div>
 </div>
 </div>
+<script>
+  $(document).ready(function() {
+    $('#form-jabatan-edit').on('submit', function(e) { //form adalah name id () ketika di submmit
+      e.preventDefault(); // dari fuction  // prevet untuk hilangkan sifat bawaan form
+      if (confirm('apakah anda yakin mau edit data ?'))
+      {
+        $.ajax({
+          url : $(this).prop('action'),
+          data: $(this).serialize(),
+          method: 'POST',
+          success: function(data){
+            data = $.parseJSON(data);
+            swal("Kerja bagus!", data.message, "sukses");
+            setTimeout(function(){
+              window.location.href = '<?= base_url('jabatan') ?>';
+            }, 2000);
+          },
+          error: function(jhr, textStatus){
+            swal("Gagal Nih", "Anda mengklik tombol! ", " sukses ");
+          }
+        })
+      }
+    });
+  });
+</script>
