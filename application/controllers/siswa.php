@@ -32,8 +32,8 @@ class Siswa extends CI_Controller {
 
 	public function hapus_data($id) // fungsi hapus data mengambil ID 
 	{
-		$this->Modelmapel->hapus_data ($id);// lihat di model lalu lakukan fuction hapus data
-		redirect('mapel'); // kembali ke view
+		$this->Modelsiswa->hapus_data_siswa ($id);// lihat di model lalu lakukan fuction hapus data
+		redirect('siswa'); // kembali ke view
 	}
 	public function edit_data ($id)
 	{

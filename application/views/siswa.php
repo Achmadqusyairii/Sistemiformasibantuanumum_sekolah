@@ -32,8 +32,8 @@
                 <td><?php echo $siswa['nis']; ?></td>
                 <td><?php echo $siswa['nm_siswa']; ?></td>
                 <td>
-                  <a href="<?php echo base_url() ?>point/edit_data/<?php echo $siswa['id']; ?>" class="badge badge-primary"><i class="fa-solid fa-pen"></i></a>
-                  <a href="<?php echo base_url() ?>point/hapus_data/<?php echo $siswa['id']; ?>" class="badge badge-danger"><i class="fa-solid fa-trash-can"></i></a>
+                  <a href="<?php echo base_url() ?>siswa/edit_data/<?php echo $siswa['id']; ?>" class="badge badge-primary"><i class="fa-solid fa-pen"></i></a>
+                  <a href="<?php echo base_url() ?>siswa/hapus_data/<?php echo $siswa['id']; ?>" class="badge badge-danger"><i class="fa-solid fa-trash-can"></i></a>
                 </td>
               </tr>
 
