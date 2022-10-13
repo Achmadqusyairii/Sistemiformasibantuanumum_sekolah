@@ -51,6 +51,7 @@
                         <a class="collapse-item" href="http://[::1]/ibuk-sipa/mapel/index/">Mata Pelajaran</a>
                         <a class="collapse-item" href="http://[::1]/ibuk-sipa/guru/index/">Guru</a>
                         <a class="collapse-item" href="http://[::1]/ibuk-sipa/point/index/">Point</a>
+                        <a class="collapse-item" href="http://[::1]/ibuk-sipa/siswa/index/">Siswa</a>
                     </div>
                 </div>
             </li>
