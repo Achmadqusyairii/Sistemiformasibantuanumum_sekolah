@@ -32,15 +32,16 @@ class Modelsiswa extends CI_Model
 		->row_array();
 	}
 
-	public function proses_edit_point() // menjadi function di ctrl
+	public function proses_edit_siswa() // menjadi function di ctrl
 	{
 		$data =[
-			"kd_point"=> $this->input->post('kd_point'),
-			"nm_point"=> $this->input->post('nm_point'),
-			"nilai_point"=> $this->input->post('nilai_point'),
+			"kd_siswa"=> $this->input->post('kd_siswa'), // ini ada di name inputan
+			"nisn"=> $this->input->post('nisn'), // ini ada di name inputan
+			"nis"=> $this->input->post('nis'), // ini ada di name inputan
+			"nm_siswa"=> $this->input->post('nm_siswa'), // ini ada di name inputan
 		];
 		$this->db->where('id', $this->input->post('id'));
-		$this->db->update('tbl_point', $data);
+		$this->db->update('tbl_siswa', $data);
 	}
 
 	//kabupaten

@@ -37,18 +37,18 @@ class Siswa extends CI_Controller {
 	}
 	public function edit_data ($id)
 	{
-		$data['tbl_mapel']=$this->Modelmapel->ambil_id_mapel($id);
+		$data['tbl_siswa']=$this->Modelsiswa->ambil_id_siswa($id);
 		$this->load->view('tamplate/header');
 		$this->load->view('tamplate/sidebar');
 		$this->load->view('tamplate/topbar');
-		$this->load->view('edit_data_mapel', $data);
+		$this->load->view('edit_data_siswa', $data);
 		$this->load->view('tamplate/footer');
 	}
 
-	public function edit_data_mapel ()
+	public function edit_data_siswa ()
 	{
-	$this -> Modelmapel->proses_edit_mapel();
-	redirect('mapel');
+	$this -> Modelsiswa->proses_edit_siswa();
+	redirect('siswa');
 	}
 
 	//kabupaten
