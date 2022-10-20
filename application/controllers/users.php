@@ -37,15 +37,15 @@ class Login extends CI_Controller
       $this->session->set_userdata($sesdata);
       // access login for admin
       if ($level === '1') {
-        redirect('dashboard/index');
+        redirect('ddd');
 
         // access login for staff
       } elseif ($level === '2') {
-        redirect('dashboard/index');
+        redirect('dashboard');
 
         // access login for author
       } else {
-        redirect('dashboard/index');
+        redirect('dashboard');
       }
     } else {
       echo $this->session->set_flashdata('err', 'Username or Password is Wrong');
