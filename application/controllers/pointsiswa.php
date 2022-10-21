@@ -16,18 +16,20 @@ class Pointsiswa extends CI_Controller {
 
   public function tambah_data()
 	{
-		$data['tbl_point'] = $this->Modelpoint->SemuaData();
+		$data['tbl_point_siswa'] = $this->Modelpointsiswa->SemuaData();
+		$data['tbl_siswa'] = $this->Modelsiswa->SemuaData('tbl_jabatan');
+    	$data['tbl_point'] = $this->Modelpoint->SemuaData('tbl_point');
 		$this->load->view('tamplate/header');
 		$this->load->view('tamplate/sidebar');
 		$this->load->view('tamplate/topbar');
-		$this->load->view('tambah_data_point', $data);
+		$this->load->view('tambah_data_point_siswa', $data);
 		$this->load->view('tamplate/footer');	
 	}
 
-	public function tambah_data_point() // ini ambil dari nama model
+	public function tambah_data_point_siswa() // ini ambil dari nama model
 	{
-		$this->Modelpoint->tambah_data_point(); // ini ambil dari fuction model
-		redirect('point'); //ini kembali ke view
+		$this->Modelpointsiswa->tambah_data_point_siswa(); // ini ambil dari fuction model
+		redirect('pointsiswa'); //ini kembali ke view
 	}
 
 	public function hapus_data($id) // fungsi hapus data mengambil ID 
