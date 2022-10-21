@@ -37,8 +37,8 @@
     <div class="container">
       <div class="card login-card">
         <div class="row no-gutters">
-          <div class="col-md-5">
-            <img src="<?php echo base_url('assets/images/hero-bg3.jpg'); ?>" alt="login" class="login-card-img">
+          <div class="col-md-5 center">
+            <img src="" alt="" class="login-card-img">
           </div>
           <div class="col-md-6">
             <div class="card-body">

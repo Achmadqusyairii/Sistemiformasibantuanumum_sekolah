@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Modelguru extends CI_Model 
+class modelguru extends CI_Model 
 {
 	public function SemuaData()
 	{

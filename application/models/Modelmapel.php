@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Modelmapel extends CI_Model 
+class modelMapel extends CI_Model 
 {
 	public function SemuaData()
 	{

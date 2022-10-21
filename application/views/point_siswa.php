@@ -17,6 +17,8 @@
     <thead>
       <tr>
       <td>NO</td>
+      <!-- <td>NISN</td> -->
+      <td>NIS</td>
       <td>NAMA SISWA</td>
       <td>JUMLAH PELANGARAN</td>
       <!-- <td>KETERANGAN</td> -->
@@ -29,11 +31,13 @@
     foreach ($tbl_point_siswa as $point) : ?>  
     <tr>
       <td><?php echo $no++; ?></td>
+      <!-- <td><?php echo $point['nisn']; ?></td> -->
+      <td><?php echo $point['nis']; ?></td>
       <td><?php echo $point['nm_siswa']; ?></td>
       <td><?php echo $point['pointsiswa']; ?></td>
       <!-- <td><?php echo $point['keterangan']; ?></td> -->
     <td>
-      <a href="<?php echo base_url() ?>point/edit_data/<?php echo $point['id']; ?>" class="badge badge-primary"><i class="fa-solid fa-eye"></i></a>
+    <a href="<?php echo base_url() ?>pointsiswa/detail/<?php echo $point['kd_siswa']; ?>" class="badge badge-primary"><i class="fa-solid fa-eye"></i></a>
       <a href="<?php echo base_url() ?>point/edit_data/<?php echo $point['id']; ?>" class="badge badge-primary"><i class="fa-solid fa-plus"></i></a>
     </tr>
     

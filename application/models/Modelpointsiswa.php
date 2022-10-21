@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Modelpointsiswa extends CI_Model 
+class modelpointsiswa extends CI_Model 
 {
 	public function SemuaData()
 	{
@@ -42,8 +42,12 @@ class Modelpointsiswa extends CI_Model
 		$this->db->update('tbl_point', $data);
 	}
 
-	//kabupaten
-	
+
+	public function detail_data($kd_siswa)
+	{
+		$this->db->where('kd_siswa', $kd_siswa);
+		return $this->db->get("view_detail_point_siswa")->result_array();
+	}
 
 	
 }
