@@ -18,6 +18,7 @@
               <td>NISN</td>
               <td>NIS</td>
               <td>NAMA SISWA</td>
+              <td>KELAS</td>
               <td>AKSI</td>
             </tr>
           </thead>
@@ -31,9 +32,10 @@
                 <td><?php echo $siswa['nisn']; ?></td>
                 <td><?php echo $siswa['nis']; ?></td>
                 <td><?php echo $siswa['nm_siswa']; ?></td>
+                <td><?php echo $siswa['kode_kelas']; ?></td>
                 <td>
                   <a href="<?php echo base_url() ?>siswa/edit_data/<?php echo $siswa['id']; ?>" class="badge badge-primary"><i class="fa-solid fa-pen"></i></a>
-                  <a href="<?php echo base_url() ?>siswa/hapus_data/<?php echo $siswa['id']; ?>" class="badge badge-danger"><i class="fa-solid fa-trash-can"></i></a>
+                  <a onclick="return confirm('Yakin Logout?');"href="<?php echo base_url() ?>siswa/hapus_data/<?php echo $siswa['id']; ?>" class="badge badge-danger"><i class="fa-solid fa-trash-can"></i></a>
                 </td>
               </tr>
 
@@ -45,3 +47,4 @@
     </div>
   </div>
 </div>
+<a onclick="return confirm('Yakin Logout?');

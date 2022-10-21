@@ -16,6 +16,7 @@ class modelsiswa extends CI_Model
 			"nisn"=> $this->input->post('nisn'), // ini ada di name inputan
 			"nis"=> $this->input->post('nis'), // ini ada di name inputan
 			"nm_siswa"=> $this->input->post('nm_siswa'), // ini ada di name inputan
+			"kode_kelas"=> $this->input->post('kode_kelas'), // ini ada di name inputan
 		];
 		$this->db->insert('tbl_siswa', $data); // ini query masukin ke database atau query insert
 	}

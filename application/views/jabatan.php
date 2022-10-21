@@ -32,7 +32,7 @@
       <td><?php echo $jabatan['jabatan']; ?></td>
     <td>
       <a href="<?php echo base_url() ?>jabatan/edit_data/<?php echo $jabatan['id']; ?>" class="badge badge-primary"><i class="fa-solid fa-pen"></i></a>
-      <a href="<?php echo base_url() ?>jabatan/hapus_data/<?php echo $jabatan['id']; ?>" class="badge badge-danger"><i class="fa-solid fa-trash-can"></i></a></td>
+      <a onclick="return confirm('Anda Yakin Akan Menghapus data ini ?');"href="<?php echo base_url() ?>jabatan/hapus_data/<?php echo $jabatan['id']; ?>" class="badge badge-danger"><i class="fa-solid fa-trash-can"></i></a></td>
     </tr>
     
     <?php endforeach ?>
