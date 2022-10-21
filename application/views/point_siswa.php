@@ -8,7 +8,7 @@
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Point Siswa
                             <a href="<?php echo base_url('point/tambah_data'); ?>" 
-                            class="btn btn-primary btn-sm float-right">TAMBAH DATA <i class="fa fa-plus"></i></a>
+                            class="btn btn-primary btn-sm float-right">TAMBAH DATA SISWA <i class="fa fa-plus"></i></a>
                             
                         </div>  
                         <div class="card-body">
@@ -19,20 +19,21 @@
       <td>NO</td>
       <td>NAMA SISWA</td>
       <td>JUMLAH PELANGARAN</td>
-      <td>KETERANGAN</td>
+      <!-- <td>KETERANGAN</td> -->
       <td>AKSI</td>
       </tr>
       </thead>
   <tbody>
     <?php 
     $no=1;
-    foreach ($tbl_point as $point) : ?>  
+    foreach ($tbl_point_siswa as $point) : ?>  
     <tr>
       <td><?php echo $no++; ?></td>
-      <td><?php echo $point['kd_point']; ?></td>
-      <td><?php echo $point['nm_point']; ?></td>
-      <td><?php echo $point['nilai_point']; ?></td>
+      <td><?php echo $point['nm_siswa']; ?></td>
+      <td><?php echo $point['pointsiswa']; ?></td>
+      <!-- <td><?php echo $point['keterangan']; ?></td> -->
     <td>
+      <a href="<?php echo base_url() ?>point/edit_data/<?php echo $point['id']; ?>" class="badge badge-primary"><i class="fa-solid fa-plus"></i></a>
       <a href="<?php echo base_url() ?>point/edit_data/<?php echo $point['id']; ?>" class="badge badge-primary"><i class="fa-solid fa-pen"></i></a>
       <a href="<?php echo base_url() ?>point/hapus_data/<?php echo $point['id']; ?>" class="badge badge-danger"><i class="fa-solid fa-trash-can"></i></a></td>
     </tr>
