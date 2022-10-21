@@ -1,179 +1,119 @@
--- phpMyAdmin SQL Dump
--- version 5.1.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Waktu pembuatan: 20 Okt 2022 pada 03.19
--- Versi server: 10.4.21-MariaDB
--- Versi PHP: 7.4.25
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `ibuksipa`
---
-
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               10.4.24-MariaDB - mariadb.org binary distribution
+-- Server OS:                    Win64
+-- HeidiSQL Version:             12.1.0.6537
 -- --------------------------------------------------------
 
---
--- Struktur dari tabel `tbl_guru`
---
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-CREATE TABLE `tbl_guru` (
-  `id` int(11) NOT NULL,
+
+-- Dumping database structure for ibuksipa
+DROP DATABASE IF EXISTS `ibuksipa`;
+CREATE DATABASE IF NOT EXISTS `ibuksipa` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+USE `ibuksipa`;
+
+-- Dumping structure for table ibuksipa.tbl_guru
+DROP TABLE IF EXISTS `tbl_guru`;
+CREATE TABLE IF NOT EXISTS `tbl_guru` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `kd_guru` int(10) NOT NULL,
   `nip` varchar(20) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `kd_jabatan` int(10) NOT NULL,
-  `kd_mapel` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `kd_mapel` int(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `tbl_guru`
---
+-- Data exporting was unselected.
 
-INSERT INTO `tbl_guru` (`id`, `kd_guru`, `nip`, `nama`, `kd_jabatan`, `kd_mapel`) VALUES
-(8, 1, '1803231009960001', 'YOSI PRATIWI', 3, 2);
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `tbl_jabatan`
---
-
-CREATE TABLE `tbl_jabatan` (
-  `id` int(11) NOT NULL,
+-- Dumping structure for table ibuksipa.tbl_jabatan
+DROP TABLE IF EXISTS `tbl_jabatan`;
+CREATE TABLE IF NOT EXISTS `tbl_jabatan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `kd_jabatan` int(10) NOT NULL,
-  `jabatan` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `jabatan` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `tbl_jabatan`
---
+-- Data exporting was unselected.
 
-INSERT INTO `tbl_jabatan` (`id`, `kd_jabatan`, `jabatan`) VALUES
-(4, 1, 'KEPALA SEKOLAH'),
-(6, 2, 'WAKIL KEPALA SEKOLAH'),
-(7, 3, 'GURU'),
-(18, 4, 'SATPAM'),
-(20, 5, 'KANTIN');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `tbl_kelas`
---
-
-CREATE TABLE `tbl_kelas` (
-  `id` int(11) NOT NULL,
+-- Dumping structure for table ibuksipa.tbl_kelas
+DROP TABLE IF EXISTS `tbl_kelas`;
+CREATE TABLE IF NOT EXISTS `tbl_kelas` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `kode_kelas` int(50) NOT NULL,
-  `nm_kelas` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `nm_kelas` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `tbl_kelas`
---
+-- Data exporting was unselected.
 
-INSERT INTO `tbl_kelas` (`id`, `kode_kelas`, `nm_kelas`) VALUES
-(8, 1, '10 A');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `tbl_mapel`
---
-
-CREATE TABLE `tbl_mapel` (
-  `id` int(11) NOT NULL,
+-- Dumping structure for table ibuksipa.tbl_mapel
+DROP TABLE IF EXISTS `tbl_mapel`;
+CREATE TABLE IF NOT EXISTS `tbl_mapel` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `kd_mapel` int(50) NOT NULL,
-  `nm_mapel` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `nm_mapel` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `tbl_mapel`
---
+-- Data exporting was unselected.
 
-INSERT INTO `tbl_mapel` (`id`, `kd_mapel`, `nm_mapel`) VALUES
-(5, 1, 'MATIMATIKA'),
-(6, 2, 'IPA'),
-(7, 3, 'BAHASA INGGRIS');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `tbl_point`
---
-
-CREATE TABLE `tbl_point` (
-  `id` int(11) NOT NULL,
+-- Dumping structure for table ibuksipa.tbl_point
+DROP TABLE IF EXISTS `tbl_point`;
+CREATE TABLE IF NOT EXISTS `tbl_point` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `kd_point` int(10) NOT NULL,
   `nm_point` varchar(50) NOT NULL,
-  `nilai_point` int(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `nilai_point` int(10) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `kd_point` (`kd_point`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `tbl_point`
---
+-- Data exporting was unselected.
 
-INSERT INTO `tbl_point` (`id`, `kd_point`, `nm_point`, `nilai_point`) VALUES
-(4, 1, 'Bolos', 51);
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `tbl_point_siswa`
---
-
-CREATE TABLE `tbl_point_siswa` (
-  `id` int(11) NOT NULL,
+-- Dumping structure for table ibuksipa.tbl_point_siswa
+DROP TABLE IF EXISTS `tbl_point_siswa`;
+CREATE TABLE IF NOT EXISTS `tbl_point_siswa` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `kd_siswa` int(50) NOT NULL,
-  `kd_point` int(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `kd_point` int(50) NOT NULL,
+  `keterangan` varchar(125) NOT NULL,
+  `tanggal` date DEFAULT curdate(),
+  PRIMARY KEY (`id`),
+  KEY `kd_siswa` (`kd_siswa`),
+  KEY `kd_point` (`kd_point`),
+  CONSTRAINT `FK_tbl_point_siswa_tbl_point` FOREIGN KEY (`kd_point`) REFERENCES `tbl_point` (`kd_point`) ON UPDATE CASCADE,
+  CONSTRAINT `FK_tbl_point_siswa_tbl_siswa` FOREIGN KEY (`kd_siswa`) REFERENCES `tbl_siswa` (`kd_siswa`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `tbl_point_siswa`
---
+-- Data exporting was unselected.
 
-INSERT INTO `tbl_point_siswa` (`id`, `kd_siswa`, `kd_point`) VALUES
-(1, 1, 1);
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `tbl_siswa`
---
-
-CREATE TABLE `tbl_siswa` (
-  `id` int(11) NOT NULL,
+-- Dumping structure for table ibuksipa.tbl_siswa
+DROP TABLE IF EXISTS `tbl_siswa`;
+CREATE TABLE IF NOT EXISTS `tbl_siswa` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `kd_siswa` int(10) NOT NULL,
   `nisn` int(10) NOT NULL,
   `nis` int(10) NOT NULL,
-  `nm_siswa` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `nm_siswa` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `kd_siswa` (`kd_siswa`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `tbl_siswa`
---
+-- Data exporting was unselected.
 
-INSERT INTO `tbl_siswa` (`id`, `kd_siswa`, `nisn`, `nis`, `nm_siswa`) VALUES
-(3, 1, 876654, 133245, 'ACHMAD QUSYAIRI,SE'),
-(5, 2, 19777, 21210014, 'YOSI PRATIWI');
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `tbl_users`
---
-
-CREATE TABLE `tbl_users` (
+-- Dumping structure for table ibuksipa.tbl_users
+DROP TABLE IF EXISTS `tbl_users`;
+CREATE TABLE IF NOT EXISTS `tbl_users` (
   `user_id` int(11) DEFAULT NULL,
   `user_name` varchar(100) DEFAULT NULL,
   `user_email` varchar(100) DEFAULT NULL,
@@ -184,106 +124,31 @@ CREATE TABLE `tbl_users` (
   `pass` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `tbl_users`
---
+-- Data exporting was unselected.
 
-INSERT INTO `tbl_users` (`user_id`, `user_name`, `user_email`, `user_password`, `user_level`, `created_at`, `created_by`, `pass`) VALUES
-(1, 'Admin Super Power', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '1', '0000-00-00', '0', '123456');
+-- Dumping structure for view ibuksipa.view_point_siswa
+DROP VIEW IF EXISTS `view_point_siswa`;
+-- Creating temporary table to overcome VIEW dependency errors
+CREATE TABLE `view_point_siswa` (
+	`id` INT(11) NOT NULL,
+	`nm_siswa` VARCHAR(50) NOT NULL COLLATE 'utf8mb4_general_ci',
+	`nisn` INT(10) NOT NULL,
+	`pointsiswa` DECIMAL(32,0) NULL,
+	`keterangan` VARCHAR(125) NOT NULL COLLATE 'utf8mb4_general_ci'
+) ENGINE=MyISAM;
 
---
--- Indexes for dumped tables
---
+-- Dumping structure for view ibuksipa.view_point_siswa
+DROP VIEW IF EXISTS `view_point_siswa`;
+-- Removing temporary table and create final VIEW structure
+DROP TABLE IF EXISTS `view_point_siswa`;
+CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `view_point_siswa` AS SELECT a.id,b.nm_siswa, b.nisn, SUM(c.nilai_point) AS pointsiswa, a.keterangan FROM tbl_point_siswa a INNER JOIN tbl_siswa b ON
+a.kd_siswa = b.kd_siswa
+INNER JOIN tbl_point c ON
+a.kd_point = c.kd_point
+GROUP BY a.kd_siswa ;
 
---
--- Indeks untuk tabel `tbl_guru`
---
-ALTER TABLE `tbl_guru`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indeks untuk tabel `tbl_jabatan`
---
-ALTER TABLE `tbl_jabatan`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indeks untuk tabel `tbl_kelas`
---
-ALTER TABLE `tbl_kelas`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indeks untuk tabel `tbl_mapel`
---
-ALTER TABLE `tbl_mapel`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indeks untuk tabel `tbl_point`
---
-ALTER TABLE `tbl_point`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indeks untuk tabel `tbl_point_siswa`
---
-ALTER TABLE `tbl_point_siswa`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indeks untuk tabel `tbl_siswa`
---
-ALTER TABLE `tbl_siswa`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT untuk tabel yang dibuang
---
-
---
--- AUTO_INCREMENT untuk tabel `tbl_guru`
---
-ALTER TABLE `tbl_guru`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT untuk tabel `tbl_jabatan`
---
-ALTER TABLE `tbl_jabatan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
-
---
--- AUTO_INCREMENT untuk tabel `tbl_kelas`
---
-ALTER TABLE `tbl_kelas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT untuk tabel `tbl_mapel`
---
-ALTER TABLE `tbl_mapel`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT untuk tabel `tbl_point`
---
-ALTER TABLE `tbl_point`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT untuk tabel `tbl_point_siswa`
---
-ALTER TABLE `tbl_point_siswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT untuk tabel `tbl_siswa`
---
-ALTER TABLE `tbl_siswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-COMMIT;
-
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;

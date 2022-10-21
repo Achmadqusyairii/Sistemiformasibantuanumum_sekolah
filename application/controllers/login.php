@@ -9,6 +9,9 @@ class Login extends CI_Controller
 
   function index()
   {
+    if ($this->session->userdata('logged_in') === TRUE) {
+      redirect('home');
+  } 
     $this->load->view('login_view');
   }
 
