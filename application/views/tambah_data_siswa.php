@@ -32,7 +32,12 @@
         <div class="from-gruop row">
           <label for="nm_siswa" class="col-sm-2 col-form-label">KELAS</label>
           <div class="col-sm-5">
-            <input type="text" class="from-control" name="kode_kelas">
+          <select name="kd_kelas" id="kd_p">
+      <?php
+        foreach ($tbl_kelas as $kelas) {?>
+          <option value="<?= $kelas['kode_kelas'] ?>"><?= $kelas['nm_kelas'] ?></option>
+        <?php } ?>
+    </select>
           </div>
         </div>
         <div class="from-gruop row">

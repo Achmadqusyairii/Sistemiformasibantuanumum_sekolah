@@ -17,6 +17,7 @@ class Siswa extends CI_Controller {
   public function tambah_data()
 	{
 		$data['tbl_siswa'] = $this->modelsiswa->SemuaData();
+		$data['tbl_kelas'] = $this->modelkelas->SemuaData('tbl_kelas');
 		$this->load->view('tamplate/header');
 		$this->load->view('tamplate/sidebar');
 		$this->load->view('tamplate/topbar');
