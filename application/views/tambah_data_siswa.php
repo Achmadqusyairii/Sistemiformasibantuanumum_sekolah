@@ -36,6 +36,24 @@
           </div>
         </div>
         <div class="from-gruop row">
+          <label for="nm_wali" class="col-sm-2 col-form-label">NAMA WALI</label>
+          <div class="col-sm-5">
+            <input type="text" class="from-control" name="nm_wali">
+          </div>
+        </div>
+        <div class="from-gruop row">
+          <label for="nm_siswa" class="col-sm-2 col-form-label">NIK WALI</label>
+          <div class="col-sm-5">
+            <input type="text" class="from-control" name="nik_wali">
+          </div>
+        </div>
+        <div class="from-gruop row">
+          <label for="nm_siswa" class="col-sm-2 col-form-label">NO TELEPON</label>
+          <div class="col-sm-5">
+            <input type="text" class="from-control" name="tlpon">
+          </div>
+        </div>
+        <div class="from-gruop row">
           <label for="" class="col-sm-2 col-form-label"></label>
           <div class="col-sm-5">
             <button type="submit" class="btn btn-primary">SIMPAN</button>
