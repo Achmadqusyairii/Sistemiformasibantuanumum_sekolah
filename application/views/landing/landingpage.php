@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Siimple - Bootstrap Landing Page Template</title>
+  <title>iBUK - SIPA</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -38,7 +38,7 @@
     <div class="container-fluid">
 
       <div class="logo">
-        <h1><a href="index.html">Siimple</a></h1>
+        <!-- <h1><a href="index.html">IBUK-SIPA</a></h1> -->
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -76,16 +76,16 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div class="hero-container">
-      <h1>Welcome to Siimple</h1>
-      <h2>Please, fill out the for below to be notified for the latest updates!</h2>
+      <h1>Welcome to IBUK - SIPA</h1>
+      <h2>INFORMASI BANTUAN UMUM KELUARGA DAN SISTEM INFORMASI PENGAWASAN ANAK</h2>
 
       <form action="forms/notify.php" method="post" role="form" class="php-email-form">
         <div class="row no-gutters">
           <div class="col-md-6 form-group pr-md-1">
-            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+            <input type="text" name="name" class="form-control" id="name" placeholder="NISN ANAK" required>
           </div>
           <div class="col-md-6 form-group pl-md-1">
-            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+            <input type="name" class="form-control" name="name" id="name" placeholder="NIK WALI" required>
           </div>
         </div>
 
@@ -94,7 +94,8 @@
           <div class="error-message"></div>
           <div class="sent-message">Your notification request was sent. Thank you!</div>
         </div>
-        <div class="text-center"><button type="submit">Notify me!</button></div>
+        <div class="text-center"><button type="submit">CEK SISWA !</button> </div>
+        
       </form>
     </div>
   </section><!-- #hero -->
@@ -107,7 +108,7 @@
 
         <div class="row">
           <div class="col-lg-6">
-            <img src="assets/img/about-img.jpg" class="img-fluid" alt="">
+            <img src="<?php echo base_url() ?>assets/assets/img/about-img.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
             <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
@@ -129,7 +130,7 @@
         </div>
 
       </div>
-    </section><!-- End About Section -->
+    </section>End About Section
 
   <!-- Vendor JS Files -->
   <script src="<?php echo base_url() ?>assets/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
