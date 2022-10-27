@@ -44,12 +44,12 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Referensi</h6>
-                        <a class="collapse-item" href="<?php echo base_url()?>/jabatan/index/">Jabatan</a>
-                        <a class="collapse-item" href="<?php echo base_url()?>/kelas/index/">Kelas</a>
-                        <a class="collapse-item" href="<?php echo base_url()?>/mapel/index/">Mata Pelajaran</a>
-                        <a class="collapse-item" href="<?php echo base_url()?>/guru/index/">Guru</a>
-                        <a class="collapse-item" href="<?php echo base_url()?>/point/index/">Point</a>
-                        <a class="collapse-item" href="<?php echo base_url()?>/siswa/index/">Siswa</a>
+                        <a class="collapse-item" href="<?php echo base_url() ?>/jabatan/index/">Jabatan</a>
+                        <a class="collapse-item" href="<?php echo base_url() ?>/kelas/index/">Kelas</a>
+                        <a class="collapse-item" href="<?php echo base_url() ?>/mapel/index/">Mata Pelajaran</a>
+                        <a class="collapse-item" href="<?php echo base_url() ?>/guru/index/">Guru</a>
+                        <a class="collapse-item" href="<?php echo base_url() ?>/point/index/">Point</a>
+                        <a class="collapse-item" href="<?php echo base_url() ?>/siswa/index/">Siswa</a>
                     </div>
                 </div>
             </li>
@@ -62,8 +62,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Bimbingan Konseling:</h6>
-                        <a class="collapse-item" href="<?php echo base_url()?>/pointsiswa/index/">Point siswa</a>
-                        <a class="collapse-item" href="cards.html">Laporan siswa</a>
+                        <a class="collapse-item" href="<?php echo base_url() ?>/pointsiswa/index/">Point siswa</a>
                     </div>
                 </div>
             </li>
@@ -72,7 +71,7 @@
 
 
             <!-- Divider -->
-            
+
 
             <!-- Heading -->
             <!-- <div class="sidebar-heading">
