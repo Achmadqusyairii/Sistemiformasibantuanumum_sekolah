@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `tbl_guru` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table ibuksipa.tbl_guru: ~0 rows (approximately)
+-- Dumping data for table ibuksipa.tbl_guru: ~1 rows (approximately)
 DELETE FROM `tbl_guru`;
 INSERT INTO `tbl_guru` (`id`, `kd_guru`, `nip`, `nama`, `kd_jabatan`, `kd_mapel`) VALUES
 	(8, 1, '1803231009960001', 'YOSI PRATIWI', 3, 2);
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `tbl_kelas` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table ibuksipa.tbl_kelas: ~1 rows (approximately)
+-- Dumping data for table ibuksipa.tbl_kelas: ~2 rows (approximately)
 DELETE FROM `tbl_kelas`;
 INSERT INTO `tbl_kelas` (`id`, `kode_kelas`, `nm_kelas`) VALUES
 	(8, 1, '10 A'),
@@ -97,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `tbl_point` (
   KEY `kd_point` (`kd_point`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table ibuksipa.tbl_point: ~1 rows (approximately)
+-- Dumping data for table ibuksipa.tbl_point: ~2 rows (approximately)
 DELETE FROM `tbl_point`;
 INSERT INTO `tbl_point` (`id`, `kd_point`, `nm_point`, `nilai_point`) VALUES
 	(4, 1, 'Bolos', 51),
@@ -116,14 +116,15 @@ CREATE TABLE IF NOT EXISTS `tbl_point_siswa` (
   KEY `kd_point` (`kd_point`),
   CONSTRAINT `FK_tbl_point_siswa_tbl_point` FOREIGN KEY (`kd_point`) REFERENCES `tbl_point` (`kd_point`) ON UPDATE CASCADE,
   CONSTRAINT `FK_tbl_point_siswa_tbl_siswa` FOREIGN KEY (`kd_siswa`) REFERENCES `tbl_siswa` (`kd_siswa`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table ibuksipa.tbl_point_siswa: ~3 rows (approximately)
+-- Dumping data for table ibuksipa.tbl_point_siswa: ~4 rows (approximately)
 DELETE FROM `tbl_point_siswa`;
 INSERT INTO `tbl_point_siswa` (`id`, `kd_siswa`, `kd_point`, `keterangan`, `tanggal`) VALUES
 	(13, 1, 1, 'main judi', '2022-10-21'),
 	(14, 1, 2, 'kawin', '2022-10-21'),
-	(15, 2, 2, 'ssss', '2022-10-21');
+	(15, 2, 2, 'ssss', '2022-10-21'),
+	(16, 3, 1, 'aaa', '2022-10-25');
 
 -- Dumping structure for table ibuksipa.tbl_siswa
 DROP TABLE IF EXISTS `tbl_siswa`;
@@ -134,15 +135,19 @@ CREATE TABLE IF NOT EXISTS `tbl_siswa` (
   `nis` int(10) NOT NULL,
   `nm_siswa` varchar(50) NOT NULL,
   `kode_kelas` int(10) DEFAULT NULL,
+  `nm_wali` varchar(50) DEFAULT NULL,
+  `nik_wali` varchar(50) DEFAULT NULL,
+  `nomor_wali` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `kd_siswa` (`kd_siswa`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table ibuksipa.tbl_siswa: ~3 rows (approximately)
 DELETE FROM `tbl_siswa`;
-INSERT INTO `tbl_siswa` (`id`, `kd_siswa`, `nisn`, `nis`, `nm_siswa`, `kode_kelas`) VALUES
-	(3, 1, 876654, 133245, 'ACHMAD QUSYAIRI,SE', 1),
-	(5, 2, 19777, 21210014, 'YOSI PRATIWI', 1);
+INSERT INTO `tbl_siswa` (`id`, `kd_siswa`, `nisn`, `nis`, `nm_siswa`, `kode_kelas`, `nm_wali`, `nik_wali`, `nomor_wali`) VALUES
+	(3, 1, 876654, 133245, 'ACHMAD QUSYAIRI,SE', 1, NULL, NULL, NULL),
+	(5, 2, 19777, 21210014, 'YOSI PRATIWI', 1, NULL, NULL, NULL),
+	(7, 3, 2147483647, 5656, 'MUHAMMAD AKBAR', 2, 'ACHMAD QUSYAIRI', '1803231009960001', '081272500317');
 
 -- Dumping structure for table ibuksipa.tbl_users
 DROP TABLE IF EXISTS `tbl_users`;
