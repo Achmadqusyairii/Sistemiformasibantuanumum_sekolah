@@ -38,7 +38,7 @@
       <div class="card login-card">
         <div class="row no-gutters">
           <div class="col-md-5 center">
-            <img src="" alt="" class="login-card-img">
+            <img src="<?php echo base_url('assets'); ?>/images/backgound1.png" alt="" class="login-card-img">
           </div>
           <div class="col-md-6">
             <div class="card-body">
