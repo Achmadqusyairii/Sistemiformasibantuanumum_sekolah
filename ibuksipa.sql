@@ -15,12 +15,12 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
--- Dumping database structure for ibuksipa
-DROP DATABASE IF EXISTS `ibuksipa`;
-CREATE DATABASE IF NOT EXISTS `ibuksipa` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
-USE `ibuksipa`;
+-- Dumping database structure for tamuunda_ibuk-sipa
+DROP DATABASE IF EXISTS `tamuunda_ibuk-sipa`;
+CREATE DATABASE IF NOT EXISTS `tamuunda_ibuk-sipa` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+USE `tamuunda_ibuk-sipa`;
 
--- Dumping structure for table ibuksipa.tbl_guru
+-- Dumping structure for table tamuunda_ibuk-sipa.tbl_guru
 DROP TABLE IF EXISTS `tbl_guru`;
 CREATE TABLE IF NOT EXISTS `tbl_guru` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -32,12 +32,12 @@ CREATE TABLE IF NOT EXISTS `tbl_guru` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table ibuksipa.tbl_guru: ~1 rows (approximately)
+-- Dumping data for table tamuunda_ibuk-sipa.tbl_guru: ~1 rows (approximately)
 DELETE FROM `tbl_guru`;
 INSERT INTO `tbl_guru` (`id`, `kd_guru`, `nip`, `nama`, `kd_jabatan`, `kd_mapel`) VALUES
 	(8, 1, '1803231009960001', 'YOSI PRATIWI', 3, 2);
 
--- Dumping structure for table ibuksipa.tbl_jabatan
+-- Dumping structure for table tamuunda_ibuk-sipa.tbl_jabatan
 DROP TABLE IF EXISTS `tbl_jabatan`;
 CREATE TABLE IF NOT EXISTS `tbl_jabatan` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `tbl_jabatan` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table ibuksipa.tbl_jabatan: ~5 rows (approximately)
+-- Dumping data for table tamuunda_ibuk-sipa.tbl_jabatan: ~5 rows (approximately)
 DELETE FROM `tbl_jabatan`;
 INSERT INTO `tbl_jabatan` (`id`, `kd_jabatan`, `jabatan`) VALUES
 	(4, 1, 'KEPALA SEKOLAH'),
@@ -55,7 +55,7 @@ INSERT INTO `tbl_jabatan` (`id`, `kd_jabatan`, `jabatan`) VALUES
 	(18, 4, 'SATPAM'),
 	(20, 5, 'KANTIN');
 
--- Dumping structure for table ibuksipa.tbl_kelas
+-- Dumping structure for table tamuunda_ibuk-sipa.tbl_kelas
 DROP TABLE IF EXISTS `tbl_kelas`;
 CREATE TABLE IF NOT EXISTS `tbl_kelas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -64,13 +64,13 @@ CREATE TABLE IF NOT EXISTS `tbl_kelas` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table ibuksipa.tbl_kelas: ~2 rows (approximately)
+-- Dumping data for table tamuunda_ibuk-sipa.tbl_kelas: ~2 rows (approximately)
 DELETE FROM `tbl_kelas`;
 INSERT INTO `tbl_kelas` (`id`, `kode_kelas`, `nm_kelas`) VALUES
 	(8, 1, '10 A'),
 	(9, 2, '10 B');
 
--- Dumping structure for table ibuksipa.tbl_mapel
+-- Dumping structure for table tamuunda_ibuk-sipa.tbl_mapel
 DROP TABLE IF EXISTS `tbl_mapel`;
 CREATE TABLE IF NOT EXISTS `tbl_mapel` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -79,14 +79,14 @@ CREATE TABLE IF NOT EXISTS `tbl_mapel` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table ibuksipa.tbl_mapel: ~3 rows (approximately)
+-- Dumping data for table tamuunda_ibuk-sipa.tbl_mapel: ~3 rows (approximately)
 DELETE FROM `tbl_mapel`;
 INSERT INTO `tbl_mapel` (`id`, `kd_mapel`, `nm_mapel`) VALUES
 	(5, 1, 'MATIMATIKA'),
 	(6, 2, 'IPA'),
 	(7, 3, 'BAHASA INGGRIS');
 
--- Dumping structure for table ibuksipa.tbl_point
+-- Dumping structure for table tamuunda_ibuk-sipa.tbl_point
 DROP TABLE IF EXISTS `tbl_point`;
 CREATE TABLE IF NOT EXISTS `tbl_point` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -97,13 +97,13 @@ CREATE TABLE IF NOT EXISTS `tbl_point` (
   KEY `kd_point` (`kd_point`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table ibuksipa.tbl_point: ~2 rows (approximately)
+-- Dumping data for table tamuunda_ibuk-sipa.tbl_point: ~2 rows (approximately)
 DELETE FROM `tbl_point`;
 INSERT INTO `tbl_point` (`id`, `kd_point`, `nm_point`, `nilai_point`) VALUES
 	(4, 1, 'Bolos', 51),
 	(5, 2, 'maling', 10);
 
--- Dumping structure for table ibuksipa.tbl_point_siswa
+-- Dumping structure for table tamuunda_ibuk-sipa.tbl_point_siswa
 DROP TABLE IF EXISTS `tbl_point_siswa`;
 CREATE TABLE IF NOT EXISTS `tbl_point_siswa` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -118,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `tbl_point_siswa` (
   CONSTRAINT `FK_tbl_point_siswa_tbl_siswa` FOREIGN KEY (`kd_siswa`) REFERENCES `tbl_siswa` (`kd_siswa`) ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table ibuksipa.tbl_point_siswa: ~4 rows (approximately)
+-- Dumping data for table tamuunda_ibuk-sipa.tbl_point_siswa: ~4 rows (approximately)
 DELETE FROM `tbl_point_siswa`;
 INSERT INTO `tbl_point_siswa` (`id`, `kd_siswa`, `kd_point`, `keterangan`, `tanggal`) VALUES
 	(13, 1, 1, 'main judi', '2022-10-21'),
@@ -126,7 +126,7 @@ INSERT INTO `tbl_point_siswa` (`id`, `kd_siswa`, `kd_point`, `keterangan`, `tang
 	(15, 2, 2, 'ssss', '2022-10-21'),
 	(16, 3, 1, 'aaa', '2022-10-25');
 
--- Dumping structure for table ibuksipa.tbl_siswa
+-- Dumping structure for table tamuunda_ibuk-sipa.tbl_siswa
 DROP TABLE IF EXISTS `tbl_siswa`;
 CREATE TABLE IF NOT EXISTS `tbl_siswa` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -142,14 +142,14 @@ CREATE TABLE IF NOT EXISTS `tbl_siswa` (
   KEY `kd_siswa` (`kd_siswa`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table ibuksipa.tbl_siswa: ~3 rows (approximately)
+-- Dumping data for table tamuunda_ibuk-sipa.tbl_siswa: ~3 rows (approximately)
 DELETE FROM `tbl_siswa`;
 INSERT INTO `tbl_siswa` (`id`, `kd_siswa`, `nisn`, `nis`, `nm_siswa`, `kode_kelas`, `nm_wali`, `nik_wali`, `nomor_wali`) VALUES
 	(3, 1, 876654, 133245, 'ACHMAD QUSYAIRI,SE', 1, NULL, NULL, NULL),
 	(5, 2, 19777, 21210014, 'YOSI PRATIWI', 1, NULL, NULL, NULL),
 	(7, 3, 2147483647, 5656, 'MUHAMMAD AKBAR', 2, 'ACHMAD QUSYAIRI', '1803231009960001', '081272500317');
 
--- Dumping structure for table ibuksipa.tbl_users
+-- Dumping structure for table tamuunda_ibuk-sipa.tbl_users
 DROP TABLE IF EXISTS `tbl_users`;
 CREATE TABLE IF NOT EXISTS `tbl_users` (
   `user_id` int(11) DEFAULT NULL,
@@ -162,12 +162,12 @@ CREATE TABLE IF NOT EXISTS `tbl_users` (
   `pass` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table ibuksipa.tbl_users: ~1 rows (approximately)
+-- Dumping data for table tamuunda_ibuk-sipa.tbl_users: ~1 rows (approximately)
 DELETE FROM `tbl_users`;
 INSERT INTO `tbl_users` (`user_id`, `user_name`, `user_email`, `user_password`, `user_level`, `created_at`, `created_by`, `pass`) VALUES
 	(1, 'Admin Super Power', 'admin', 'e10adc3949ba59abbe56e057f20f883e', '1', '0000-00-00', '0', '123456');
 
--- Dumping structure for view ibuksipa.view_detail_point_siswa
+-- Dumping structure for view tamuunda_ibuk-sipa.view_detail_point_siswa
 DROP VIEW IF EXISTS `view_detail_point_siswa`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `view_detail_point_siswa` (
@@ -184,7 +184,7 @@ CREATE TABLE `view_detail_point_siswa` (
 	`tanggal` DATE NULL
 ) ENGINE=MyISAM;
 
--- Dumping structure for view ibuksipa.view_point_siswa
+-- Dumping structure for view tamuunda_ibuk-sipa.view_point_siswa
 DROP VIEW IF EXISTS `view_point_siswa`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `view_point_siswa` (
@@ -197,27 +197,17 @@ CREATE TABLE `view_point_siswa` (
 	`nis` INT(10) NOT NULL
 ) ENGINE=MyISAM;
 
--- Dumping structure for view ibuksipa.view_detail_point_siswa
+-- Dumping structure for view tamuunda_ibuk-sipa.view_detail_point_siswa
 DROP VIEW IF EXISTS `view_detail_point_siswa`;
 -- Removing temporary table and create final VIEW structure
 DROP TABLE IF EXISTS `view_detail_point_siswa`;
-CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `view_detail_point_siswa` AS SELECT a.id,b.kode_kelas,d.nm_kelas,b.kd_siswa,b.nm_siswa, b.nisn, c.nm_point, c.nilai_point,a.keterangan , b.nis, a.tanggal FROM tbl_point_siswa a INNER JOIN tbl_siswa b ON
-a.kd_siswa = b.kd_siswa
-INNER JOIN tbl_point c ON
-a.kd_point = c.kd_point 
-INNER JOIN tbl_kelas d ON
-b.kode_kelas = d.kode_kelas ;
+CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `view_detail_point_siswa` AS select `a`.`id` AS `id`,`b`.`kode_kelas` AS `kode_kelas`,`d`.`nm_kelas` AS `nm_kelas`,`b`.`kd_siswa` AS `kd_siswa`,`b`.`nm_siswa` AS `nm_siswa`,`b`.`nisn` AS `nisn`,`c`.`nm_point` AS `nm_point`,`c`.`nilai_point` AS `nilai_point`,`a`.`keterangan` AS `keterangan`,`b`.`nis` AS `nis`,`a`.`tanggal` AS `tanggal` from (((`tbl_point_siswa` `a` join `tbl_siswa` `b` on(`a`.`kd_siswa` = `b`.`kd_siswa`)) join `tbl_point` `c` on(`a`.`kd_point` = `c`.`kd_point`)) join `tbl_kelas` `d` on(`b`.`kode_kelas` = `d`.`kode_kelas`));
 
--- Dumping structure for view ibuksipa.view_point_siswa
+-- Dumping structure for view tamuunda_ibuk-sipa.view_point_siswa
 DROP VIEW IF EXISTS `view_point_siswa`;
 -- Removing temporary table and create final VIEW structure
 DROP TABLE IF EXISTS `view_point_siswa`;
-CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `view_point_siswa` AS SELECT a.id,b.kd_siswa,b.nm_siswa, b.nisn, SUM(c.nilai_point) AS pointsiswa, a.keterangan , b.nis FROM tbl_point_siswa a INNER JOIN tbl_siswa b ON
-a.kd_siswa = b.kd_siswa
-INNER JOIN tbl_point c ON
-a.kd_point = c.kd_point
-GROUP BY a.kd_siswa 
-ORDER BY pointsiswa desc ;
+CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `view_point_siswa` AS select `a`.`id` AS `id`,`b`.`kd_siswa` AS `kd_siswa`,`b`.`nm_siswa` AS `nm_siswa`,`b`.`nisn` AS `nisn`,sum(`c`.`nilai_point`) AS `pointsiswa`,`a`.`keterangan` AS `keterangan`,`b`.`nis` AS `nis` from ((`tbl_point_siswa` `a` join `tbl_siswa` `b` on(`a`.`kd_siswa` = `b`.`kd_siswa`)) join `tbl_point` `c` on(`a`.`kd_point` = `c`.`kd_point`)) group by `a`.`kd_siswa` order by sum(`c`.`nilai_point`) desc;
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
